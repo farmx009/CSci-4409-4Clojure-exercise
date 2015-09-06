@@ -43,7 +43,6 @@
 
 ; What I put:
 20
-20
 
 ; considered it like stored values
 ; value at :b is 20 for both
@@ -97,11 +96,76 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; Problem 23 - Reverse a sequence
+
+;
+#(for [(x 1) (y (get %(- (count %) x))) (+ x x)] [y])
+
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; Problem 25 - Find the odd numbers
+
+; What I put:
+#(filter odd? %)
+
+; Filter goes through whole lists
+; if number is odd, it's included
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; Problem 37 - Regular Expressions
+
+; What I put:
+"ABC"
+
+; Reading the sequence looking for only capital letters
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; Problem 40 - Interpose a sequence
+
+; 
+#(interleave (repeat %1) %2)
+
+; 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; Problem 43 - Reverse interleave
+
+;
+
+
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; Problem 44 - Rotate sequence
+
+;
+
+
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; Problem 46 - Flipping out
+
+;
+
+
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; Problem 47 - Contain yourself
 
+; What I put:
+4
+
+; for #{4 5 6}, there is a 4
+; [1 1 1 1 1], there is atleast 4 indices
+; [2 3 4], only has 3 indices so false and (not [2 3 4]) is true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
