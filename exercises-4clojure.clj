@@ -14,11 +14,9 @@
 ;;; Problem #162: Logical falsity and true
 
 ; What I pasted in the box:
-
 1
 
 ; because all the given expressions returned 1, for example:
-
 (= 1 (if [] 1 0))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -26,11 +24,9 @@
 ;;; Problem #15: Double Down
 
 ; What I pasted in the box:
-
 #(* 2 %)
 
 ; which is an anonymous function that doubles its argument, for example:
-
 (= (#(* 2 %) 11) 22)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -89,18 +85,20 @@
 
 ;;; Problem 21 - Nth Element
 
-;
+; What I put:
+#(last (take (+ %2 1) %1))
 
-;
+; take gets all the elements up to what given (n) + 1
+; last gets the last element of the new set of elements
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; Problem 23 - Reverse a sequence
 
-;
-#(for [(x 1) (y (get %(- (count %) x))) (+ x x)] [y])
+; What I put:
+#(into () %)
 
-;
+; into puts elements at the head of the set individually (reversing it)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -135,7 +133,10 @@
 ;;; Problem 43 - Reverse interleave
 
 ;
-
+#(list 
+  (for 
+    [x %2] 
+    [conj %2 %1]))
 
 ;
 
