@@ -123,40 +123,54 @@
 
 ;;; Problem 40 - Interpose a sequence
 
-; 
-#(interleave (repeat %1) %2)
+; What I put:
+#(drop-last (interleave %2 (repeat %1)))
 
-; 
+; repeat gives me the inputs, interleave puts things in
+; just have to drop the last input and whala!
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; Problem 43 - Reverse interleave
 
 ;
-#(list 
-  (for 
-    [x %2] 
-    [conj %2 %1]))
+#((let [x (count %1)
+        y (/ x %1) ]
+   (partition y %2) ))
 
-;
+; Get ClassCastException, but I know I'm really close.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; Problem 44 - Rotate sequence
 
-;
+; What I put:
+#(let 
+   [x (count %2)
+    a (if (neg? %1) 
+        (take (inc (+ x %1)) %2)
+        (take %1 %2)
+       )
+    b (if (neg? %1) 
+        (reverse (take (* -1 %1) (reverse %2)))
+        (reverse (take (- x %1) (reverse %2)))
+       )
+    ]
+   (concat b a)
+  )
 
-
-;
+; Only passes first one.
+; Hypothesis: 
+;   My positive rotations work while my negatives don't.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; Problem 46 - Flipping out
 
-;
+; What I put:
+#(fn ([x y] (% y x)))
 
-
-;
+; Literally filipping x & y (the two argument) when calling function (%)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
